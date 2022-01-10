@@ -3,13 +3,12 @@ import Button from "../button/button";
 import styles from "./editor_form.module.css";
 
 const EditorForm = ({ FileInput, card, updateCard, deleteCard }) => {
-  const { name, company, theme, title, email, message, filename, fileURL } =
-    card;
+  const { name, company, theme, title, email, message, fileName } = card;
 
   const onFileChange = (file) => {
     updateCard({
       ...card,
-      filename: file.name,
+      fileName: file.name,
       fileURL: file.url,
     });
   };
@@ -80,7 +79,7 @@ const EditorForm = ({ FileInput, card, updateCard, deleteCard }) => {
         onChange={onChange}
       ></textarea>
       <div className={styles.fileInput}>
-        <FileInput name={name} onFileChange={onFileChange} />
+        <FileInput name={fileName} onFileChange={onFileChange} />
       </div>
       <Button name="Delete" onClick={onSubmit} />
     </form>

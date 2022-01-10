@@ -3,6 +3,7 @@
 .preview {
   flex-basis: 50%;
   background-color: makerWhite;
+  overflow-y: auto;
 }
 
 .title {
